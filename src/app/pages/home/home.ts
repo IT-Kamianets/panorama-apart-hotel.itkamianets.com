@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
@@ -12,7 +13,12 @@ import { LanguageService } from '../../services/language.service';
 })
 export class HomeComponent {
   langService = inject(LanguageService);
+  titleService = inject(Title);
   currentLang = this.langService.currentLang;
+
+  constructor() {
+    this.titleService.setTitle('Panorama Apart Hotel');
+  }
 
   content: { [key: string]: { [key: string]: string } } = {
     hero_title: {
