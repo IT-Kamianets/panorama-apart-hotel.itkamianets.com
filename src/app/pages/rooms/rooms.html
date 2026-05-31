@@ -1,0 +1,89 @@
+<section class="section rooms-section">
+  <div class="container">
+    <div class="rooms-header">
+      <h1 class="section-title">{{ labels['title'][currentLang()] }}</h1>
+      <p class="section-subtitle">{{ labels['subtitle'][currentLang()] }}</p>
+    </div>
+
+    <div class="rooms-grid">
+      @for (room of rooms; track room.id) {
+        <div class="room-card">
+          <!-- Room Image (Clickable) -->
+          <div class="room-gallery" (click)="openGallery(room, 0)">
+            <div class="image-wrapper-main">
+              <img [src]="'/images/rooms/' + room.folder + '/' + room.images[0]" 
+                   [alt]="room.type[currentLang()]" 
+                   class="room-img-main">
+              
+              <div class="gallery-overlay">
+                <i class="bi bi-search"></i>
+              </div>
+
+              <div class="room-price-badge">
+                <span class="price">{{ room.price }}</span>
+                <span class="currency">{{ labels['currency'][currentLang()] }}</span>
+              </div>
+
+              <div class="bath-badge" [class.private]="room.hasPrivateBathroom">
+                <i class="bi" [class.bi-shield-check]="room.hasPrivateBathroom" [class.bi-info-circle]="!room.hasPrivateBathroom"></i>
+                {{ room.hasPrivateBathroom ? labels['private_bath'][currentLang()] : labels['shared_bath'][currentLang()] }}
+              </div>
+            </div>
+          </div>
+          
+          <div class="room-content">
+            <h2 class="room-title">{{ room.type[currentLang()] }}</h2>
+            
+            <div class="room-meta">
+              <span><i class="bi bi-people-fill"></i> {{ room.capacity }} {{ labels['capacity'][currentLang()] }}</span>
+            </div>
+            
+            <p class="room-description">{{ room.description[currentLang()] }}</p>
+            
+            <div class="room-features">
+              <h3 class="features-title">{{ labels['amenities'][currentLang()] }}</h3>
+              <ul class="features-list">
+                @for (feature of room.features[currentLang()]; track feature) {
+                  <li><i class="bi bi-check2-circle"></i> {{ feature }}</li>
+                }
+              </ul>
+            </div>
+            
+            <div class="room-footer">
+              <a routerLink="/contact" class="btn btn-primary w-100">{{ labels['book_now'][currentLang()] }}</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+@if (isModalOpen && selectedRoom) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <button class="modal-close" (click)="closeModal()"><i class="bi bi-x-lg"></i></button>
+    
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-image-container">
+        <img [src]="'/images/rooms/' + selectedRoom.folder + '/' + selectedRoom.images[activeModalIndex]" 
+             class="modal-img">
+        
+        @if (selectedRoom.images.length > 1) {
+          <button class="modal-nav prev" (click)="modalPrev($event)"><i class="bi bi-chevron-left"></i></button>
+          <button class="modal-nav next" (click)="modalNext($event)"><i class="bi bi-chevron-right"></i></button>
+          <div class="modal-counter">{{ activeModalIndex + 1 }} / {{ selectedRoom.images.length }}</div>
+        }
+      </div>
+
+      <!-- Mini thumbnails inside modal -->
+      <div class="modal-thumbs">
+        @for (img of selectedRoom.images; track $index) {
+          <div class="m-thumb" [class.active]="$index === activeModalIndex" (click)="activeModalIndex = $index">
+            <img [src]="'/images/rooms/' + selectedRoom.folder + '/' + img">
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

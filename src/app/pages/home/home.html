@@ -1,0 +1,80 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>{{ content['hero_title'][currentLang()] }}</h1>
+      <p>{{ content['hero_subtitle'][currentLang()] }}</p>
+      <div class="hero-actions">
+        <a routerLink="/contact" class="btn btn-primary">{{ content['cta_book'][currentLang()] }}</a>
+        <a routerLink="/rooms" class="btn btn-secondary">{{ content['cta_rooms'][currentLang()] }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrapper">
+        <img src="/images/about.png" alt="Hotel Interior" class="about-img main-img">
+        <div class="experience-badge">
+          <span class="years">5+</span>
+          <span class="text">Years of<br>Excellence</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <h2 class="section-title text-left">{{ content['about_title'][currentLang()] }}</h2>
+        <p class="lead-text">{{ content['about_text_1'][currentLang()] }}</p>
+        <p class="secondary-text">{{ content['about_text_2'][currentLang()] }}</p>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>10k+</h3>
+            <p>{{ content['about_stats_guests'][currentLang()] }}</p>
+          </div>
+          <div class="stat-item">
+            <h3>15</h3>
+            <p>{{ content['about_stats_rooms'][currentLang()] }}</p>
+          </div>
+          <div class="stat-item">
+            <h3>5</h3>
+            <p>{{ content['about_stats_location'][currentLang()] }}</p>
+          </div>
+        </div>
+
+        <a routerLink="/gallery" class="btn btn-outline-dark mt-4">{{ content['cta_gallery'][currentLang()] }} <i class="bi bi-arrow-right ml-2"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities Section -->
+<section class="section amenities-section">
+  <div class="container">
+    <h2 class="section-title">{{ content['amenities_title'][currentLang()] }}</h2>
+    <p class="section-subtitle">{{ content['amenities_subtitle'][currentLang()] }}</p>
+    
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <div class="icon-wrapper"><i class="bi bi-wifi"></i></div>
+        <h3>{{ content['amenity_wifi'][currentLang()] }}</h3>
+        <p>{{ content['amenity_wifi_desc'][currentLang()] }}</p>
+      </div>
+      <div class="amenity-card">
+        <div class="icon-wrapper"><i class="bi bi-car-front-fill"></i></div>
+        <h3>{{ content['amenity_parking'][currentLang()] }}</h3>
+        <p>{{ content['amenity_parking_desc'][currentLang()] }}</p>
+      </div>
+      <div class="amenity-card">
+        <div class="icon-wrapper"><i class="bi bi-cup-hot-fill"></i></div>
+        <h3>{{ content['amenity_coffee'][currentLang()] }}</h3>
+        <p>{{ content['amenity_coffee_desc'][currentLang()] }}</p>
+      </div>
+      <div class="amenity-card">
+        <div class="icon-wrapper"><i class="bi bi-stars"></i></div>
+        <h3>{{ content['amenity_cleaning'][currentLang()] }}</h3>
+        <p>{{ content['amenity_cleaning_desc'][currentLang()] }}</p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<section class="section gallery-section">
+  <div class="container">
+    <div class="gallery-header text-center mb-5">
+      <h1 class="section-title">{{ labels['title'][currentLang()] }}</h1>
+      <p class="section-subtitle">{{ labels['subtitle'][currentLang()] }}</p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      @for (img of images; track img) {
+        <div class="gallery-item" (click)="openGallery($index)">
+          <div class="img-wrapper">
+            <img [src]="'/images/gallery/' + img" [alt]="img" loading="lazy">
+            <div class="hover-overlay">
+              <i class="bi bi-search"></i>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Full Lightbox Browser -->
+@if (isModalOpen) {
+  <div class="modal-overlay" (click)="onOverlayClick()">
+    <button class="modal-close" (click)="closeModal()"><i class="bi bi-x-lg"></i></button>
+    
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-image-container">
+        <img [src]="'/images/gallery/' + images[activeIndex]" class="modal-img">
+        
+        <button class="modal-nav prev" (click)="prev($event)"><i class="bi bi-chevron-left"></i></button>
+        <button class="modal-nav next" (click)="next($event)"><i class="bi bi-chevron-right"></i></button>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-counter">{{ activeIndex + 1 }} / {{ images.length }}</div>
+        
+        <!-- Thumbnails for quick jump inside the viewer -->
+        <div class="modal-thumbs">
+          @for (img of images; track $index) {
+            <div class="m-thumb" 
+                 [class.active]="$index === activeIndex" 
+                 (click)="activeIndex = $index">
+              <img [src]="'/images/gallery/' + img">
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="container footer-content">
+
+    <div class="footer-info">
+      <h3>Panorama Apart-<span>Hotel</span></h3>
+      <p><i class="bi bi-geo-alt"></i> <a href="https://www.google.com/maps/search/?api=1&query=вул.+Зарванська,+5Б,+Кам'янець-Подільський" target="_blank" class="phone-link">{{ labels['address'][currentLang()] }}</a></p>
+      <p><i class="bi bi-telephone"></i> <a href="tel:+380974744562" class="phone-link">+380 97 474 4562</a></p>
+
+    </div>
+
+    <div class="footer-nav">
+      <h4>{{ labels['nav'][currentLang()] }}</h4>
+      <ul>
+        <li><a routerLink="/">{{ labels['home'][currentLang()] }}</a></li>
+        <li><a routerLink="/rooms">{{ labels['rooms'][currentLang()] }}</a></li>
+        <li><a routerLink="/gallery">{{ labels['gallery'][currentLang()] }}</a></li>
+        <li><a routerLink="/contact">{{ labels['contact'][currentLang()] }}</a></li>
+      </ul>
+    </div>
+
+    <div id="footer-map" class="footer-map">
+      <!-- Reliable Search-based Google Maps Embed -->
+      <iframe
+        width="100%"
+        height="300"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        src="https://maps.google.com/maps?q=вул.%20Зарванська,%205Б,%20Кам'янець-Подільський&t=&z=16&ie=UTF8&iwloc=B&output=embed">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Panorama Apart-Hotel. {{ labels['rights'][currentLang()] }}</p>
+    <p class="designer">Designed by Victor</p>
+  </div>
+</footer>

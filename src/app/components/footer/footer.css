@@ -1,0 +1,182 @@
+.footer {
+  background: var(--background); /* Use variable for background */
+  color: var(--text-main); /* Use variable for text */
+  padding: 50px 0 0 0;
+  border-top: 1px solid var(--border-color);
+  margin-top: 50px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--secondary); /* Use heading variable */
+  font-family: var(--font-heading);
+}
+
+.footer-info h3 span {
+  color: var(--primary); /* Accent color */
+}
+
+.footer-info p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+}
+
+.phone-link {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.phone-link:hover {
+  color: var(--primary);
+}
+
+/* Social links icons */
+.social-links {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--surface);
+  color: var(--text-main);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.social-links a:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+/* Navigation block */
+.footer-nav {
+  flex: 1;
+  min-width: 150px;
+}
+
+.footer-nav h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav ul li {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+  color: var(--primary);
+}
+
+/* Map block */
+.footer-map {
+  flex: 2;
+  min-width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+/* Lighten the OSM map in dark mode if needed, but iframe handles itself usually */
+[data-theme="dark"] .footer-map iframe {
+  filter: grayscale(0.2) invert(0.05) contrast(0.9);
+}
+
+.footer-bottom {
+  background: var(--surface);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+.designer {
+  font-size: 0.75rem;
+  margin-top: 5px !important;
+  opacity: 0.8;
+}
+
+/* =========================================
+   MOBILE VERSION
+   ========================================= */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-map {
+    width: 100%;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+
+  .footer-info p, .social-links {
+    justify-content: center;
+  }
+
+  .footer-info p {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+}
