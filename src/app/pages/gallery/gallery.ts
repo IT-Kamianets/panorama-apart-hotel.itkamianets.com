@@ -13,19 +13,19 @@ export class GalleryComponent {
   langService = inject(LanguageService);
   currentLang = this.langService.currentLang;
 
-  // Exact files found in public/images/gallery
   images: string[] = [
-    'gallery_1.png', 'gallery_2.png', 'gallery_3.png', 
-    'gallery_4.png', 'gallery_5.png', 'gallery_6.png', 
-    'gallery_7.png', 'gallery_8.png', 'gallery_9.png',
-    'gallery_10.png', 'gallery_11.png', 'gallery_12.png',
-    'gallery_13.png'
+    "/images/gallery/gallery_1.png", "/images/gallery/gallery_2.png", "/images/gallery/gallery_3.png",
+    "/images/gallery/gallery_4.png", "/images/gallery/gallery_5.png", "/images/gallery/gallery_6.png",
+    "/images/gallery/gallery_7.png", "/images/gallery/gallery_8.png", "/images/gallery/gallery_9.png",
+    "/images/gallery/gallery_10.png", "/images/gallery/gallery_11.png", "/images/gallery/gallery_12.png",
+    "/images/gallery/gallery_13.png", "/images/gallery/gallery_14.png", "/images/gallery/gallery_15.png",
+    "/images/gallery/gallery_16.png"
   ];
 
   labels: { [key: string]: { [key: string]: string } } = {
     title: { uk: 'Галерея готелю', en: 'Hotel Gallery', pl: 'Galeria hotelu', de: 'Hotelgalerie' },
-    subtitle: { 
-      uk: 'Відчуйте атмосферу затишку та комфорту через наші фото.', 
+    subtitle: {
+      uk: 'Відчуйте атмосферу затишку та комфорту через наші фото.',
       en: 'Feel the atmosphere of coziness and comfort through our photos.',
       pl: 'Poczuj atmosferę przytulności i komfortu dzięki нашим zdjęciom.',
       de: 'Spüren Sie die Atmosphäre von Gemütlichkeit und Komfort durch unsere Fotos.'

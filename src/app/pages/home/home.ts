@@ -38,7 +38,7 @@ export class HomeComponent {
     cta_gallery: { uk: 'Дивитись фото', en: 'View Photos', pl: 'Zobacz zdjęcia', de: 'Fotos ansehen' },
 
     // About Section
-    about_title: { uk: 'Про наш міні-готель', en: 'About Our Mini-Hotel', pl: 'O naszym mini-hotelu', de: 'Über unser Mini-Hotel' },
+    about_title: { uk: 'Про наш апарт-готель', en: 'About Our Apart-Hotel', pl: 'O naszym apart-hotelu', de: 'Über unser Apart-Hotel' },
     about_text_1: {
       uk: 'Panorama Apart-Hotel — це місце, де кожен гість відчуває себе як вдома. Ми розташовані в самому серці старовинного Кам\'янця-Подільського, поблизу головних історичних пам\'яток.',
       en: 'Panorama Apart-Hotel is a place where every guest feels at home. We are located in the very heart of ancient Kamianets-Podilskyi, close to the main historical attractions.',

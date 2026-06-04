@@ -2,8 +2,11 @@
 .hero {
   height: calc(100vh - 80px);
   min-height: 600px;
-  background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.4)), 
-              url('/images/home-page.png') center/cover;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5)),
+                    url('/images/home-page.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   color: white;
@@ -201,7 +204,7 @@
 .icon-wrapper {
   width: 70px;
   height: 70px;
-  background-color: rgba(194, 153, 110, 0.1);
+  background-color: rgba(212, 175, 55, 0.15);
   color: var(--primary);
   border-radius: 50%;
   display: flex;
